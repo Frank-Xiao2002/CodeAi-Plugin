@@ -1,0 +1,33 @@
+<!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
+<idea-plugin>
+    <id>top.frankxxj.codeai.plugin</id>
+
+    <name>CodeAi</name>
+
+    <vendor email="Xiao670127@126.com" url="https://github.com/Frank-Xiao2002">Frank-Xiao</vendor>
+
+    <description><![CDATA[
+    CodeAi helps students and developers code faster and easier.<br>
+    CodeAi is a powerful AI code assistant that can help you write code more efficiently and accurately.
+    Some basic features include:<br>
+    <ul>
+        <li> Code generation: CodeAi can generate code snippets based on your input, saving you time and effort. </li>
+        <li> Code completion: CodeAi can provide suggestions for completing your code, helping you avoid syntax errors and typos.</li>
+        <li> Code fix: CodeAi can help you identify and fix errors in your code.</li>
+    </ul>
+  ]]></description>
+
+    <depends>com.intellij.modules.platform</depends>
+
+    <resource-bundle>messages.MyBundle</resource-bundle>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <applicationService serviceImplementation="top.frankxxj.codeai.plugin.settings.AppSettings"/>
+        <applicationConfigurable instance="top.frankxxj.codeai.plugin.settings.AppSettingsConfigurable"
+                                 id="top.frankxxj.codeai.plugin.settings.AppSettingsConfigurable"
+                                 displayName="CodeAi Settings"/>
+        <applicationService serviceImplementation="top.frankxxj.codeai.plugin.utils.CommonUtils"/>
+        <toolWindow factoryClass="top.frankxxj.codeai.plugin.chat.ui.ChatToolWindowFactory" id="CodeAi Chat"
+        anchor="right" icon="top.frankxxj.codeai.plugin.icons.CodeAiIcons.Toolwindow" />
+    </extensions>
+</idea-plugin>
