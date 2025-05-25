@@ -27,7 +27,7 @@
                                  id="top.frankxxj.codeai.plugin.settings.AppSettingsConfigurable"
                                  displayName="CodeAi Settings"/>
         <applicationService serviceImplementation="top.frankxxj.codeai.plugin.utils.CommonUtils"/>
-        <toolWindow factoryClass="top.frankxxj.codeai.plugin.chat.ui.ChatToolWindowFactory" id="CodeAi Chat"
+        <toolWindow factoryClass="top.frankxxj.codeai.plugin.chat.ChatToolWindowFactory" id="CodeAi Chat"
         anchor="right" icon="top.frankxxj.codeai.plugin.icons.CodeAiIcons.Toolwindow" />
     </extensions>
 </idea-plugin>

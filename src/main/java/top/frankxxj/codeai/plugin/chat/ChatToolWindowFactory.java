@@ -1,4 +1,4 @@
-package top.frankxxj.codeai.plugin.chat.ui;
+package top.frankxxj.codeai.plugin.chat;
 
 import com.intellij.openapi.project.DumbAware;
 import com.intellij.openapi.project.Project;
@@ -10,9 +10,9 @@ import com.intellij.ui.components.panels.HorizontalLayout;
 import com.intellij.ui.components.panels.VerticalLayout;
 import com.intellij.ui.content.Content;
 import com.intellij.ui.content.ContentFactory;
-import lombok.Getter;
 import org.jetbrains.annotations.NotNull;
-import top.frankxxj.codeai.plugin.chat.ui.message.MessageComponent;
+import org.jetbrains.annotations.Nullable;
+import top.frankxxj.codeai.plugin.chat.message.MessageComponent;
 import top.frankxxj.codeai.plugin.icons.CodeAiIcons;
 
 import javax.swing.*;
@@ -29,7 +29,6 @@ final class ChatToolWindowFactory implements ToolWindowFactory, DumbAware {
 
 
     private static class ChatToolWindowContent {
-        @Getter
         private final JPanel contentPanel = new JPanel();
         private final JPanel inputPanel = new InputPanel();
         private List<MessageComponent> messages;
@@ -38,6 +37,9 @@ final class ChatToolWindowFactory implements ToolWindowFactory, DumbAware {
             // TODO: 5/24/2025 show history
         }
 
+        public @Nullable JPanel getContentPanel() {
+            return this.contentPanel;
+        }
     }
 
 }
