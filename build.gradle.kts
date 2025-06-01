@@ -32,7 +32,8 @@ repositories {
 dependencies {
     implementation(libs.springWeb)
     implementation(libs.springWebFlux)
-    implementation(libs.lombok)
+    compileOnly(libs.lombok)
+    annotationProcessor(libs.lombok)
     testImplementation(libs.junit)
     testImplementation(libs.opentest4j)
 
@@ -144,5 +145,11 @@ intellijPlatformTesting {
                 robotServerPlugin()
             }
         }
+    }
+}
+
+configurations {
+    compileOnly {
+        extendsFrom(configurations.annotationProcessor.get())
     }
 }

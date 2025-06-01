@@ -26,8 +26,8 @@
         <applicationConfigurable instance="top.frankxxj.codeai.plugin.settings.AppSettingsConfigurable"
                                  id="top.frankxxj.codeai.plugin.settings.AppSettingsConfigurable"
                                  displayName="CodeAi Settings"/>
-        <applicationService serviceImplementation="top.frankxxj.codeai.plugin.utils.CommonUtils"/>
         <toolWindow factoryClass="top.frankxxj.codeai.plugin.chat.ChatToolWindowFactory" id="CodeAi Chat"
-        anchor="right" icon="top.frankxxj.codeai.plugin.icons.CodeAiIcons.Toolwindow" />
+                    anchor="right" icon="top.frankxxj.codeai.plugin.icons.CodeAiIcons.Toolwindow"/>
+        <postStartupActivity implementation="top.frankxxj.codeai.plugin.project.MyProjectOpenListener"/>
     </extensions>
 </idea-plugin>

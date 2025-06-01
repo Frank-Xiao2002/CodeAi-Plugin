@@ -14,7 +14,7 @@ public class CodeBlockControlPanel extends JPanel {
         this.buttonPanel = new JPanel();
         buttonPanel.setLayout(new FlowLayout(FlowLayout.RIGHT, 0, 0));
         // TODO: 5/25/2025 setup copyActionButton
-        this.copyActionButton = new KeyboardAccessibleActionButton();
+        this.copyActionButton = null;
         buttonPanel.add(copyActionButton);
         add(buttonPanel);
     }
