@@ -48,7 +48,7 @@ public final class RetrieveInfoService {
             // Check if the file is a valid text file and is not excluded by the settings
             String fileType = virtualFile.getExtension();
             if (fileType == null || !AppSettings.SUPPORTED_FILE_TYPES.contains("." + fileType)) {
-                return false;
+                return true;
             }
             // Check if the file is not excluded by the user settings
             return AppSettings.getInstance().getState().appliedFileTypes.getOrDefault("." + fileType, true);
